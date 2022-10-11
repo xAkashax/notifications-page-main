@@ -4,4 +4,88 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 10vh;
+  padding: 15px;
+  border: 2px solid black;
+}
+header .title {
+  font-size: 18px;
+  font-weight: 800;
+}
+header .title span {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(219deg, 85%, 26%);
+  padding: 3px 11px;
+  border-radius: 20%;
+  font-weight: 500;
+}
+header .mark-as-read {
+  color: hsl(224deg, 21%, 14%);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+main .notification {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: nowrap;
+          flex-direction: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 1px solid black;
+  width: 100%;
+  margin: 15px;
+  padding: 5px 20px;
+  background-color: hsl(211deg, 68%, 94%);
+}
+main .notification img {
+  width: 50px;
 }/*# sourceMappingURL=style.css.map */

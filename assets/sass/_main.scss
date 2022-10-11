@@ -1,0 +1,44 @@
+//Header
+
+header {
+  @include flex(space-between, center);
+  height: 10vh;
+  padding: 15px;
+  border: 2px solid black;
+  .title {
+    // @include flex(space-between, center, row);
+    // height: 100%;
+    font-size: 18px;
+    font-weight: $fw-800;
+    span {
+      color: $white;
+      background-color: $blue-primary;
+      padding: 3px 11px;
+      border-radius: 20%;
+      font-weight: $fw-500;
+    }
+  }
+  .mark-as-read {
+    color: $very-dark-blue;
+    font-weight: $fw-500;
+    font-size: 14px;
+  }
+}
+
+//MAIN
+
+main {
+  @include flex(space-between, center, column);
+  // height: 80vh;
+  .notification {
+    @include flex(flex-start, center, nowrap);
+    border: 1px solid black;
+    width: 100%;
+    margin: 15px;
+    padding: 5px 20px;
+    background-color: $light-grayish-blue-1;
+    img {
+      width: 50px;
+    }
+  }
+}
