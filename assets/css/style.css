@@ -8,9 +8,29 @@
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: hsl(210deg, 60%, 98%);
+  width: 100vw;
+  height: 100%;
 }
 
-header {
+.wrap {
+  background-color: hsl(0deg, 0%, 100%);
+}
+@media (min-width: 1024px) {
+  .wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    max-width: 500px;
+    min-width: 45%;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 1px 5px 2px hsl(211deg, 68%, 94%);
+            box-shadow: 0 1px 5px 2px hsl(211deg, 68%, 94%);
+  }
+}
+.wrap header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,27 +47,40 @@ header {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: 10vh;
-  padding: 15px;
-  border: 2px solid black;
+  padding: 15px 20px;
 }
-header .title {
+.wrap header .title {
   font-size: 18px;
   font-weight: 800;
 }
-header .title span {
+.wrap header .title span {
   color: hsl(0deg, 0%, 100%);
   background-color: hsl(219deg, 85%, 26%);
   padding: 3px 11px;
   border-radius: 20%;
   font-weight: 500;
 }
-header .mark-as-read {
-  color: hsl(224deg, 21%, 14%);
+.wrap header .mark-as-read {
+  color: hsl(219deg, 12%, 42%);
   font-weight: 500;
   font-size: 14px;
+  cursor: pointer;
 }
-
-main {
+.wrap header .mark-as-read:hover {
+  color: hsl(219deg, 85%, 26%);
+}
+@media (min-width: 1024px) {
+  .wrap header {
+    padding: 15px 35px;
+  }
+  .wrap header .title {
+    font-size: 20px;
+  }
+  .wrap header .mark-as-read {
+    font-size: 16px;
+  }
+}
+.wrap main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,31 +94,153 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 14px;
 }
-main .notification {
+.wrap main .notification {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: nowrap;
           flex-direction: nowrap;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  border: 1px solid black;
-  width: 100%;
-  margin: 15px;
-  padding: 5px 20px;
+  width: 92vw;
+  margin: 5px auto;
+  padding: 20px 10px;
+}
+.wrap main .notification .avatar {
+  margin-right: 8px;
+}
+.wrap main .notification .avatar img {
+  width: 40px;
+}
+.wrap main .notification .txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: column;
+      -ms-flex-align: column;
+          align-items: column;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-preferred-size: 82%;
+      flex-basis: 82%;
+  color: hsl(219deg, 12%, 42%);
+  display: inline-block;
+  line-height: 1.4;
+}
+.wrap main .notification .txt .name {
+  color: hsl(224deg, 21%, 14%);
+  font-weight: 800;
+  cursor: pointer;
+}
+.wrap main .notification .txt .name:hover {
+  color: hsl(219deg, 85%, 26%);
+}
+.wrap main .notification .txt .post-title {
+  font-weight: 600;
+  cursor: pointer;
+}
+.wrap main .notification .txt .post-title:hover {
+  color: hsl(219deg, 85%, 26%);
+}
+.wrap main .notification .txt .chess-club {
+  color: hsl(219deg, 85%, 26%);
+}
+.wrap main .notification .txt .notification-dot.active {
+  background-color: hsl(1deg, 90%, 64%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-left: 3px;
+  display: inline-block;
+}
+.wrap main .notification .txt .time {
+  display: block;
+  white-space: nowrap;
+  color: hsl(219deg, 14%, 63%);
+}
+.wrap main .active {
+  background-color: hsl(210deg, 60%, 98%);
+  border-radius: 15px;
+}
+.wrap main .with-photo {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  cursor: pointer;
+}
+.wrap main .with-photo .avatar.image {
+  margin-left: 5px;
+}
+.wrap main .message {
+  border: 1px solid hsl(211deg, 68%, 94%);
+  border-radius: 5px;
+  color: hsl(219deg, 12%, 42%);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 10px 0 0 50px;
+  padding: 15px 30px 15px 5px;
+  cursor: pointer;
+}
+.wrap main .message:hover {
   background-color: hsl(211deg, 68%, 94%);
 }
-main .notification img {
-  width: 50px;
+@media (min-width: 1024px) {
+  .wrap main {
+    font-size: 16px;
+  }
+  .wrap main .notification {
+    width: 95%;
+    margin: 10px auto 0;
+    padding: 20px 10px;
+  }
+  .wrap main .notification .avatar {
+    margin-right: 0;
+  }
+  .wrap main .txt {
+    display: inline-block;
+    width: 100%;
+    margin-left: -25px;
+  }
+  .wrap main .with-photo .avatar {
+    margin-left: 25px;
+  }
+  .wrap main .with-photo .txt {
+    margin-left: 5px;
+    padding-left: 20px;
+  }
+  .wrap main .with-photo .avatar.image {
+    margin-right: 15px;
+  }
+  .wrap main .message {
+    width: 85%;
+    margin: 10px 0 0 65px;
+    padding: 15px 10px 15px 20px;
+  }
+}
+.wrap footer {
+  color: hsl(219deg, 14%, 63%);
+}
+.wrap footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.wrap footer .attribution a {
+  color: hsl(228deg, 45%, 44%);
 }/*# sourceMappingURL=style.css.map */

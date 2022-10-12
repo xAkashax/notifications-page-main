@@ -1,44 +1,171 @@
 //Header
-
-header {
-  @include flex(space-between, center);
-  height: 10vh;
-  padding: 15px;
-  border: 2px solid black;
-  .title {
-    // @include flex(space-between, center, row);
-    // height: 100%;
-    font-size: 18px;
-    font-weight: $fw-800;
-    span {
-      color: $white;
-      background-color: $blue-primary;
-      padding: 3px 11px;
-      border-radius: 20%;
+.wrap {
+  background-color: $white;
+  @media (min-width: 1024px) {
+    @include center;
+    max-width: 500px;
+    min-width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 1px 5px 2px $light-grayish-blue-1;
+  }
+  header {
+    @include flex(space-between, center);
+    height: 10vh;
+    padding: 15px 20px;
+    .title {
+      font-size: 18px;
+      font-weight: $fw-800;
+      span {
+        color: $white;
+        background-color: $blue-primary;
+        padding: 3px 11px;
+        border-radius: 20%;
+        font-weight: $fw-500;
+      }
+    }
+    .mark-as-read {
+      color: $dark-grayish-blue;
       font-weight: $fw-500;
+      font-size: 14px;
+      cursor: pointer;
+      &:hover {
+        color: $blue-primary;
+      }
+    }
+    @media (min-width: 1024px) {
+      padding: 15px 35px;
+      .title {
+        font-size: 20px;
+      }
+      .mark-as-read {
+        font-size: $fs-paragraph;
+      }
     }
   }
-  .mark-as-read {
-    color: $very-dark-blue;
-    font-weight: $fw-500;
+
+  //Main
+
+  main {
+    @include flex(space-between, center, column, nowrap);
     font-size: 14px;
+    .notification {
+      @include flex(space-around, flex-start, nowrap);
+      width: 92vw;
+      margin: 5px auto;
+      padding: 20px 10px;
+      .avatar {
+        margin-right: 8px;
+        img {
+          width: 40px;
+        }
+      }
+      .txt {
+        @include flex(flex-start, column);
+        flex-basis: 82%;
+        color: $dark-grayish-blue;
+        display: inline-block;
+        line-height: 1.4;
+        .name {
+          color: $very-dark-blue;
+          font-weight: $fw-800;
+          cursor: pointer;
+          &:hover {
+            color: $blue-primary;
+          }
+        }
+        .post-title {
+          font-weight: $fw-600;
+          cursor: pointer;
+          &:hover {
+            color: $blue-primary;
+          }
+        }
+        .chess-club {
+          color: $blue-primary;
+        }
+        .notification-dot.active {
+          background-color: $red-primary;
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          margin-left: 3px;
+          display: inline-block;
+        }
+        .time {
+          display: block;
+          white-space: nowrap;
+          color: $grayish-blue;
+        }
+      }
+    }
+    .active {
+      background-color: $very-light-grayish-blue;
+      border-radius: 15px;
+    }
+    .with-photo {
+      flex-wrap: nowrap;
+      cursor: pointer;
+      .avatar.image {
+        margin-left: 5px;
+      }
+    }
+    .message {
+      border: 1px solid $light-grayish-blue-1;
+      border-radius: 5px;
+      color: $dark-grayish-blue;
+      align-self: flex-end;
+      margin: 10px 0 0 50px;
+      padding: 15px 30px 15px 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: $light-grayish-blue-1;
+      }
+    }
+    @media (min-width: 1024px) {
+      font-size: $fs-paragraph;
+      .notification {
+        width: 95%;
+        margin: 10px auto 0;
+        padding: 20px 10px;
+        .avatar {
+          margin-right: 0;
+        }
+      }
+      .txt {
+        display: inline-block;
+        width: 100%;
+        margin-left: -25px;
+      }
+      .with-photo {
+        .avatar {
+          margin-left: 25px;
+        }
+        .txt {
+          margin-left: 5px;
+          padding-left: 20px;
+        }
+        .avatar.image {
+          margin-right: 15px;
+        }
+      }
+      .message {
+        width: 85%;
+        margin: 10px 0 0 65px;
+        padding: 15px 10px 15px 20px;
+      }
+    }
   }
-}
 
-//MAIN
+  //Footer
 
-main {
-  @include flex(space-between, center, column);
-  // height: 80vh;
-  .notification {
-    @include flex(flex-start, center, nowrap);
-    border: 1px solid black;
-    width: 100%;
-    margin: 15px;
-    padding: 5px 20px;
-    background-color: $light-grayish-blue-1;
-    img {
-      width: 50px;
+  footer {
+    color: $grayish-blue;
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      a {
+        color: hsl(228, 45%, 44%);
+      }
     }
   }
 }
