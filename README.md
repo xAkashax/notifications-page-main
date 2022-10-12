@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontendmentor.io](https://your-solution-url.com)
-- Live Site URL: [Live Demo](https://your-live-site-url.com)
+- Solution URL: [Frontendmentor.io](https://www.frontendmentor.io/solutions/notifications-page-using-scss-qVGLVprOi9)
+- Live Site URL: [Live Demo](https://radiant-eclair-868d14.netlify.app/)
 
 ## My process
 
